@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  
+    <div class="container" >
+        <div class="row">
+            <div class="col-4"></div>
+            <div class=" card my-5 col-4" >
+                <h3 style="color: red;">Student Data Entry Form</h3>
+                
+    <form method="post" action="update_data" class="container" >
+        <% for (row in rows){%>
+        <div class="form-group">
+        <label for="name" class="font-weight-bold">Name:</label>
+        <input type="text" name="txt_name" class="form-control" value="<%= rows[row].name %>" ><br>
+       
+        <!-- <label for="class">Class:</label>
+        <input type="text" name="txt_class"><br> -->
+
+        <label for="class" class="font-weight-bold">Class:</label>
+        <select id="class" name="txt_class"  class="form-control" value="<%= rows[row].class %>">
+            <option value="Plus_one">Plus one</option>
+            <option value="Plus_two">Plus Two</option>
+        </select><br>
+
+        <!-- <label for="stream">Stream:</label>
+        <input type="text" name="txt_stream"><br> -->
+
+        <label for="stream" class="font-weight-bold">Stream:</label>
+        <select id="stream" name="txt_stream" class="form-control" value="<%= rows[row].stream %>">
+            <option value="Science">Science</option>
+            <option value="computer_science">Computer science</option>
+            <option value="commerce">Commerce</option>
+        </select><br>
+        <label for="mark" class="font-weight-bold">Mark:</label>
+        <input type="text" name="txt_mark" class="form-control" value="<%= rows[row].mark %>"><br>
+
+        <!-- <label for="grade">Grade:</label>
+        <input type="text" name="txt_grade"> -->
+
+        <label for="stream" class="font-weight-bold">Grade:</label>
+        <select id="stream" name="txt_grade" class="form-control" value="<%= rows[row].grade %>">
+            <option value="A-plus">A Plus</option>
+            <option value="A">A</option>
+            <option value="B-pluse">B Plus</option>
+            <option value="B">B</option>
+            <option value="C-plus">C Plus</option>
+            <option value="C">C</option>
+        </select><br>
+        <input type="submit" value="Save" class="btn btn-primary">
+        <input type="hidden" name="txt_id" value="<%= rows[row].student_id %>">
+       </div>
+       <% } %> 
+    </form>
+  
+</div>
+</div></div>
+
+</body>
+</html>

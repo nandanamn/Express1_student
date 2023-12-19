@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/bst/css/bootstrap.css">
+    <script src="/bst/js/bootstrap.js"></script>
+   
+</head>
+<body>
+    <!-- <h1>Hello world</h1> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3><%= title%></h3>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">name </th>
+            <th scope="col">class</th>
+            <th scope="col">mark</th>
+            <th scope="col">stream</th>
+            <th scope="col">grade</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            <% for (student in student_data){ %>
+          <tr>
+            <th scope="row"><%= parseInt(student) +1%></th>
+            <td><%=student_data[student].name %></td>
+            <td><%=student_data[student].class %></td>
+            <td><%=student_data[student].stream %></td>
+            <td><%=student_data[student].mark %></td>
+            <td><%=student_data[student].grade %></td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+    </div>
+</div>
+</div>
+</body>
+</html>

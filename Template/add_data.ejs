@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <h3>Student Data Entry Form</h3>
+    <form method="post" action="submit_data" class="container">
+        <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="txt_name" class="form-control"><br>
+       
+        <!-- <label for="class">Class:</label>
+        <input type="text" name="txt_class"><br> -->
+
+        <label for="class">Class:</label>
+        <select id="class" name="txt_class"  class="form-control">
+            <option value="Plus_one">Plus one</option>
+            <option value="Plus_two">Plus Two</option>
+        </select><br>
+
+        <!-- <label for="stream">Stream:</label>
+        <input type="text" name="txt_stream"><br> -->
+
+        <label for="stream">Stream:</label>
+        <select id="stream" name="txt_stream" class="form-control">
+            <option value="Science">Science</option>
+            <option value="computer_science">Computer science</option>
+            <option value="commerce">Commerce</option>
+        </select><br>
+        <label for="mark">Mark:</label>
+        <input type="text" name="txt_mark" class="form-control"><br>
+
+        <!-- <label for="grade">Grade:</label>
+        <input type="text" name="txt_grade"> -->
+
+        <label for="stream">Grade:</label>
+        <select id="stream" name="txt_grade" class="form-control">
+            <option value="A-plus">A Plus</option>
+            <option value="A">A</option>
+            <option value="B-pluse">B Plus</option>
+            <option value="B">B</option>
+            <option value="C-plus">C Plus</option>
+            <option value="C">C</option>
+        </select>
+        <input type="submit" value="Enter" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+</div></div>
+<div class="col-2"></div>
+<div  class="col-6">
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Class</th>
+            <th scope="col">Stream</th>
+            <th scope="col">Mark</th>
+            <th scope="col">Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (row in rows){%>
+      <tr>
+        <th scope="row"><%= parseInt(row) +1 %></th>
+        <td><%= rows[row].name %><td>
+        <td><%= rows[row].class %></td>
+        <td><%= rows[row].mark %></td>
+        <td><%= rows[row].stream %></td>
+        <td><%= rows[row].grade %></td>
+        <td><a href="/delete_student?id=<%= rows[row].student_id %>" class="btn"><img height="20px" width="20px" src="/delete.png"></a></td>
+        <td><a href="/update_student?id=<%= rows[row].student_id %>" class="btn"><img height="20px" width="20px" src="/edit.png"></a></td>
+
+      </tr>
+      <% } %>
+    </table>
+    </tbody>
+</body>
+</html>
